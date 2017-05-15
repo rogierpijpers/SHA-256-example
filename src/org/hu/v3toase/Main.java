@@ -25,7 +25,7 @@ public class Main {
         
         // hash the password with the salt. This should be stored in the database as the password
         String hashedPassword = SHA256.hash(password, salt);
-        System.out.println("Salt:\t\t"+hashedPassword);
+        System.out.println("Salt:\t\t"+salt);
         System.out.println("Hashed password:\t"+hashedPassword+"\n");
         System.out.println("--------------------------------------");
         

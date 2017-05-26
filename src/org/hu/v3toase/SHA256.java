@@ -26,6 +26,12 @@ public class SHA256 {
     }
     
     public static String hash(String plainText, String salt) throws NoSuchAlgorithmException{
+        String saltedPlainText = salt + plainText;
+        
+        return hash(saltedPlainText);
+    }
+    
+    public static String hash(String plainText) throws NoSuchAlgorithmException{
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         byte[] hash = digest.digest(plainText.getBytes(StandardCharsets.UTF_8));
         return DatatypeConverter.printBase64Binary(hash);

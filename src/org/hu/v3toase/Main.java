@@ -11,6 +11,8 @@ import java.util.Scanner;
 /**
  *
  * @author Rogier
+ * This demonstration shows how to implement password authentication using
+ * SHA-256 hashed and salted passwords.
  */
 public class Main {
     public static final String ANSI_RED = "\u001B[31m";
@@ -25,7 +27,7 @@ public class Main {
         
         // hash the password with the salt. This should be stored in the database as the password
         String hashedPassword = SHA256.hash(password, salt);
-        System.out.println("Salt:\t\t"+salt);
+        System.out.println("Salt:\t\t\t"+salt);
         System.out.println("Hashed password:\t"+hashedPassword+"\n");
         System.out.println("--------------------------------------");
         
@@ -48,6 +50,6 @@ public class Main {
         
         scanner.close();
         System.out.println(ANSI_GREEN + "You are authorized!");
-
+        System.exit(0);
     }
 }
